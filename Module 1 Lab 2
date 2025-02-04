@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+// Module 1 Lab 2 
+
+int main() {
+  // Declare string variables
+    std::string name;
+    std::string email;
+    
+
+    // Prompt user for input
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);  // Get full name input
+
+    std::cout << "Enter your email: ";
+    std::getline(std::cin, email); // Get email input
+
+    // Output the entered information
+    std::cout << "\nThank you! Here is the information you entered:\n";
+    std::cout << "Name: " << name << std::endl;
+    std::cout << "Email: " << email << std::endl;
+    return 0;
+}
+
+  
