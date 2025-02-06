@@ -1,0 +1,45 @@
+//  Course COSC-1336
+//  Name: Kalani Westfall
+//  Date: 02/06/2025
+//  Purpose: Pizza Order for "Your Name Pizza Place"
+
+
+#include <iostream>
+#include <string>
+using  namespace std;
+
+int main() {
+//Variables 
+string qty; 
+double price;
+int numberOfToppings;
+string name;
+const double taxRate = 0.0725; 
+double subTotal;
+double grandTotal;
+double total;
+              
+cout << "Welcome to Kalanis Pizza Palace!\n"; 
+              
+cout << "How Many Pizzas Would You Like?:\n";
+cin >> qty;
+
+cout << "How Many Toppings Would You Like?:\n";
+cin >> numberOfToppings;
+
+cout << "What Is Your Name?:\n";
+cin >> name;
+
+subTotal = (qty * price) + (numberOfToppings * price);
+taxRate = subTotal * taxRate;
+total = subTotal + taxRate;
+grandTotal = total + (total * taxRate);
+
+cout << " Qty: " << qty << endl;
+cout << " Toppings: " << numberOfToppings << endl;
+cout << " Subtotal: $" << subTotal << endl;
+cout << " Tax: $" << taxRate << endl;
+cout << " Total: $" << total << endl;
+
+return 0;
+}
