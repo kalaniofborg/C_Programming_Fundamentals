@@ -1,0 +1,43 @@
+//Coded by Kalani<3 
+#include <iostream>
+#include <iomanip>
+#include <string> 
+
+using namespace std;
+int main() { 
+  string product1, product2, product3;
+  double price1, price2, price3;
+  const double taxRate = 0.08;
+
+  cout << "Enter the name of the first product: ";
+  getline(cin, product1);
+  cout << "Enter the price of the first product: ";
+  cin >> price1;
+  cin.ignore();
+
+  cout << "Enter the name of the second product: ";
+  getline(cin, product2);
+  cout << "Enter the price of the second product: ";
+  cin >> price2;
+  cin.ignore();
+
+  cout << "Enter the name of the third product: ";
+  getline(cin, product3);
+  cout << "Enter the price of the third product: ";
+  cin >> price3;
+  cin.ignore();
+
+  double subtotal = price1 + price2 + price3;
+  double tax = subtotal * taxRate;
+  double total = subtotal + tax;
+
+  cout << fixed << setprecision(2);
+  cout << "Product 1: " << product1 << ", Price: $" << price1 << endl;
+  cout << "Product 2: " << product2 << ", Price: $" << price2 << endl;
+  cout << "Product 3: " << product3 << ", Price: $" << price3 << endl;
+  cout << "Subtotal: $" << subtotal << endl;
+  cout << "Tax: $" << tax << endl;
+  cout << "Total: $" << total << endl;
+
+  return 0;
+}
