@@ -1,0 +1,26 @@
+//Kalani.Codes<3
+//2.11.25
+//COSC Practicing using If statements
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+const double MY_PRICE = 400.00;
+double price;
+
+cout << "Enter the price of the laptop: ";
+cin >> price;
+
+if (price > MY_PRICE) {
+cout << "Your price is too high\n";
+}
+  else if (price < MY_PRICE) {
+    cout << "Your price is too low\n";
+  }
+  else (price = MY_PRICE);
+    cout << "Your price is just right\n";
+return 0;
+}
