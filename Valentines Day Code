@@ -1,0 +1,19 @@
+// Author: Kalani.Codes<3 
+// Date: 2.13.2025
+//Program says what holiday is 
+
+#include <iostream>
+using namespace std;
+
+int main () {
+   // local variable declaration:
+   int dayNum;
+   string holiday;
+
+   cout << "What day of the month is it? ";
+   cin >> dayNum;
+   holiday = (dayNum == 14) ? "Happy Valentine's Day" :  "No Holiday";
+cout << holiday;
+   
+return 0;
+}
