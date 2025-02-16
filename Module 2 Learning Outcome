@@ -1,0 +1,23 @@
+// Author: Kalani.Codes<3 
+// Date: 2.15.25
+// Purpose: Data Representations 
+
+#include <iostream> 
+using namespace std;
+
+int main() {
+
+   string myOutput = "";
+   int myNumber = 6;
+   myOutput = (myNumber % 2 == 0) ? "Even" : "Odd";
+   cout << myOutput << endl; 
+
+   if (myNumber % 2 == 0) {
+   cout << myNumber << " is even" << endl;
+   }
+   
+   else
+   cout << myNumber << " is odd" << endl;
+   
+   return 0;
+}
