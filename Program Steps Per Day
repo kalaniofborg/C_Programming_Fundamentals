@@ -1,0 +1,24 @@
+// Author: Kalani.Codes<3
+// Date: 2.18.2025
+// Program gets the average of steps per day
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   bool isGood = true;
+    int numOne;
+    while (isGood) {
+        cout << "Enter a number to continue, 0 to quit: ";
+        cin >> numOne;
+    if (numOne > 0){
+        cout << "We are still entering numbers" << endl;
+    }
+    else {
+        cout << "Mahalo for playing!!" << endl;
+        isGood = false;
+    }
+        
+    }
+    return 0;
+}
