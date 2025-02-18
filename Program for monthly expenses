@@ -1,0 +1,40 @@
+// Author: Kalani.Codes<3 
+// Date: 2.15.25
+// Purpose: to create a program for monthly expenses (Module 2 Lab 1)
+
+#include <iostream> 
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main() {
+
+   string month;
+   double rentAmount;
+   double electricBill;
+   double waterBill;
+
+   cout << "Enter the month: ";
+   getline(cin, month);
+
+   cout << "Enter the rent amount: ";
+   cin >> rentAmount;
+
+   cout << "Enter the electric bill: ";
+   cin >> electricBill;
+   
+   cout << "Enter the water bill: ";
+   cin >> waterBill;
+   cout << "The total expenses for " << month << " is: " << rentAmount + electricBill + waterBill << endl;
+
+   cout << "*******Your Monthly Expenses*******\n" << endl;"
+   cout << "Month: " << month << "/n";
+   fixed << setprecision(2);
+
+   cout << "Rent: " << setw(10) << rentAmount << endl;
+   
+
+   
+   
+   return 0;
+}
