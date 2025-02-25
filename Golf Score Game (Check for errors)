@@ -1,0 +1,34 @@
+// Name: Kalani.codes<3
+// Date: 2/25/25
+// Purpose: Golfing score 
+
+#include <iostream>
+
+int main() {
+using namespace std;
+
+int myScore;
+
+  cout << "Enter your score: "; << endl;
+  cin >> myScore;
+
+  
+if (myScore <= "72") {
+  cout << "You are a great golfer!"; << endl;
+}
+
+else if (myScore <= "82") {
+  cout << "You are a good golfer!"; << endl;
+}
+
+else if (myScore <= "92") {
+  cout << "You are acceptable!"; << endl;
+}
+
+else 
+  cout << "You need to practice!"; << endl;
+})
+
+return 0;
+}
+  
