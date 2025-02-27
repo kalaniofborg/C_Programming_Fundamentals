@@ -1,0 +1,23 @@
+//Name: Kalani
+//Date 2.27.25
+//Purpose: create a program where someone can input numbers 
+
+#include <iostream>
+
+using namespace std;
+int main(){
+
+  int number;
+  int sum = 0;
+
+
+  cout << "Enter a positive number. Enter a negative number to exit: \n";
+  cin >> number;
+
+  while (number == 0){
+    sum = sum + number;
+  }
+  cout << "The sum of the numbers is: " << sum << endl;
+}
+return 0;
+}
