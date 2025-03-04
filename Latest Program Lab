@@ -1,0 +1,28 @@
+//Name: Kalani
+//Date 2.27.25
+//Purpose: create a program where someone can input numbers 
+
+#include <iostream>
+
+using namespace std;
+int main(){
+
+  int userAge = 0.0;
+  float sumOfAges = 0.0;
+  float ageAverage = 0.0;
+  const TOTAL_PEOPLE = 5;
+  
+  for(int i = 1; i <= TOTAL_PEOPLE; i++){
+    
+  cout << "Enter the first age: "<< i << " ";
+  cin >> age;
+}
+sumOfAges = sumOfAges + userAge;
+
+ageAverage = static_cast(sumOfAges) / TOTAL_PEOPLE;
+
+  cout << "The sum of the ages is: " << sumOfAges << endl;
+  cout << "The average of the ages is: " << ageAverage << endl;
+
+return 0;
+}
