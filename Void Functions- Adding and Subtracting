@@ -1,0 +1,35 @@
+// Kalani Westfall <3
+// March 4, 2025
+// Practicing user-defined functions
+
+#include <iostream>
+using namespace std;
+
+void add(int pNumOne , int pNumTwo);
+void sub(int pNumOne , int pNumTwo);
+
+int main() 
+{
+int numOne = 6;
+int numTwo = 15;
+
+add(numOne, numTwo);
+sub(numOne, numTwo);
+  
+  return 0;
+}
+
+void add(int pNumOne, int pNumTwo)
+{
+  int result;
+  result = pNumOne + pNumTwo;
+ cout << "The result is: " << result << endl;
+//cout << "The result is: " << pNumOne + pNumTwo << endl;
+}
+
+void sub(int pNumOne, int pNumTwo)
+{
+  int result;
+  result = pNumOne - pNumTwo;
+ cout << "The result is: " << result << endl;
+}
