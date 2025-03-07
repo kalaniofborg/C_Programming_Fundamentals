@@ -1,0 +1,70 @@
+//Name: Kalani
+//Date 3.6.25
+//Purpose: create a program where someone can input numbers 
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  int choice;
+  string name;
+
+  cout << "Enter your first name: ";
+  cin >> name;
+  
+  do {
+    cout << "**********************:\n";
+    cout << "Welcome to my module project, " << name << "!\n";
+    cout << "**********************:\n";
+    cout << "Enter 1 to calculate the square root\n";
+    cout << "Enter 2 to calculate the power\n";
+    cout << "Enter 3 to determine the letter grade\n";
+    cout << "Enter 0 to exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1) {
+      double num;
+      cout << "Enter a number: ";
+      cin >> num;
+      if (num < 0) {
+        cout << "Error: cannot calculate square root of a negative number\n";
+      } else {
+        cout << "The square root of " << num << " is " << sqrt(num) << endl;
+      }
+    }
+    else if (choice == 2) {
+      double base, exponent;
+      cout << "Enter the base: ";
+      cin >> base;
+      cout << "Enter the exponent: ";
+      cin >> exponent;
+      cout << base << " to the power of " << exponent << " is " << pow(base, exponent) << endl;
+    }
+    else if (choice == 3) {
+      double GPA;
+      cout << "Enter your GPA: ";
+      cin >> GPA;
+      char grade;
+
+      if (GPA >= 3.5) grade = 'A';
+      else if (GPA >= 3.0) grade = 'B';
+      else if (GPA >= 2.0) grade = 'C';
+      else if (GPA >= 1.0) grade = 'D';
+      else grade = 'F';
+
+      cout << "Your grade is " << grade << endl;
+    }
+    else if (choice == 0) {
+      cout << "Goodbye " << name << endl;
+    }
+    else {
+      cout << "Invalid choice\n";
+    }
+    
+  } while (choice != 0);
+  
+  return 0;
+}
