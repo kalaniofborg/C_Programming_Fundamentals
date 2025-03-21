@@ -1,0 +1,117 @@
+
+// Name: Kalani Codes <3 
+// Date: March 20th, 2025
+// Purpose: Project A, Section 4
+
+#include <iostream>
+using namespace std;
+
+
+int AddNumbers(int a, int b) {
+    return a + b;
+}
+
+int AddNumbers(int a, int b, int c) {
+    return a + b + c;
+}
+
+double AddNumbers(double a, double b) {
+    return a + b;
+}
+
+double AddNumbers(double a, double b, double c) {
+    return a + b + c;
+}
+
+void addTwoDoubles() {
+    double a, b;
+    cout << "Enter two doubles: ";
+    cin >> a >> b;
+    cout << "Result: " << AddNumbers(a, b) << endl;
+}
+
+void addThreeDoubles() {
+    double a, b, c;
+    cout << "Enter three doubles: ";
+    cin >> a >> b >> c;
+    cout << "Result: " << AddNumbers(a, b, c) << endl;
+}
+
+double calculatePay(double rate, double hours) {
+    double pay;
+    if (hours > 40) {
+        pay = (40 * rate) + ((hours - 40) * rate * 1.5);
+    } else {
+        pay = hours * rate;
+    }
+    return pay;
+}
+
+void displayInterest(double balance, double annualRate) {
+    cout << "Year\tBalance" << endl;
+    for (int year = 1; year <= 5; ++year) {
+        balance += balance * (annualRate / 100);
+        cout << year << "\t" << balance << endl;
+    }
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "Menu: \n";
+        cout << "1. Add two integers\n";
+        cout << "2. Add three integers\n";
+        cout << "3. Add two doubles\n";
+        cout << "4. Add three doubles\n";
+        cout << "5. Calculate weekly pay\n";
+        cout << "6. Display savings account interest\n";
+        cout << "7. Quit\n";
+        cout << "Choose an option: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                int a, b;
+                cout << "Enter two integers: ";
+                cin >> a >> b;
+                cout << "Result: " << AddNumbers(a, b) << endl;
+                break;
+            }
+            case 2: {
+                int a, b, c;
+                cout << "Enter three integers: ";
+                cin >> a >> b >> c;
+                cout << "Result: " << AddNumbers(a, b, c) << endl;
+                break;
+            }
+            case 3:
+                addTwoDoubles();
+                break;
+            case 4:
+                addThreeDoubles();
+                break;
+            case 5: {
+                double rate, hours;
+                cout << "Enter hourly rate and hours worked: ";
+                cin >> rate >> hours;
+                cout << "Total pay: $" << calculatePay(rate, hours) << endl;
+                break;
+            }
+            case 6: {
+                double balance, annualRate;
+                cout << "Enter savings account balance and annual interest rate (%): ";
+                cin >> balance >> annualRate;
+                displayInterest(balance, annualRate);
+                break;
+            }
+            case 7:
+                cout << "Exiting program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 7);
+
+    return 0;
+}
