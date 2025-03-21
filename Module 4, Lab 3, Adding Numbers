@@ -1,0 +1,80 @@
+
+// Name: Kalani Codes<3 
+// Date: March 20th, 2025
+// Purpose: Module 4 - Lab - Override AddNumbers
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int addNumbers(int x, int y) {
+    return x + y;
+}
+
+int addNumbers(int x, int y, int z) {
+    return x + y + z;
+}
+
+double addNumbers(double x, double y) {
+    return x + y;
+}
+
+double addNumbers(double x, double y, double z) {
+    return x + y + z;
+}
+
+int main() {
+    int choice;
+    do {
+        cout << "Menu:\n";
+        cout << "1. Add two integers\n";
+        cout << "2. Add three integers\n";
+        cout << "3. Add two doubles\n";
+        cout << "4. Add three doubles\n";
+        cout << "5. Quit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                int a, b;
+                cout << "Enter two integers: ";
+                cin >> a >> b;
+                cout << "Sum: " << addNumbers(a, b) << endl;
+                break;
+            }
+            case 2: {
+                int a, b, c;
+                cout << "Enter three integers: ";
+                cin >> a >> b >> c;
+                cout << "Sum: " << addNumbers(a, b, c) << endl;
+                break;
+            }
+            case 3: {
+                double a, b;
+                cout << "Enter two doubles: ";
+                cin >> a >> b;
+                cout << "Sum: " << addNumbers(a, b) << endl;
+                break;
+            }
+            case 4: {
+                double a, b, c;
+                cout << "Enter three doubles: ";
+                cin >> a >> b >> c;
+                cout << "Sum: " << addNumbers(a, b, c) << endl;
+                break;
+            }
+            case 5: {
+                cout << "Goodbye!" << endl;
+                break;
+            }
+            default: {
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+            }
+        }
+    } while (choice != 5);
+    
+    return 0;
+}
