@@ -1,0 +1,114 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+const double SMALL_COST = 1.75;
+const double MEDIUM_COST = 1.90;
+const double LARGE_COST = 2.00;
+const double PROFIT_COST = 0.25; // 25% profit margin 
+// Global variables
+int smallCoffee = 0, mediumCoffee = 0, largeCoffee = 0;
+
+// Function declarations
+void printHeader();
+void printMenu();
+void buyCoffee();
+void showCupsSold();
+void showTotalCoffeeSold();
+void showTotalMoneyMade();
+double totalCost(double totalSales);
+
+// Function definitions
+void printHeader() {
+    cout << "Welcome to the coffee shop!" << endl;
+    cout << "--------------------" << endl;
+}
+
+void printMenu() {
+    cout << "1. Buy Coffee\n";
+    cout << "2. Show Number of Cups Sold\n";
+    cout << "3. Show Total Coffee Sold\n";
+    cout << "4. Show Total Money Made\n";
+    cout << "5. Exit\n";
+    cout << "Enter your choice: ";
+}
+
+void buyCoffee() {
+    int choice;
+    cout << "Choose Cup Size (1. Small, 2. Medium, 3. Large): ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            smallCoffee++;
+            cout << "You bought a small cup of coffee." << endl;
+            break;
+        case 2:
+            mediumCoffee++;
+            cout << "You bought a medium cup of coffee." << endl;
+            break;
+        case 3:
+            largeCoffee++;
+            cout << "You bought a large cup of coffee." << endl;
+            break;
+        default:
+            cout << "Invalid choice." << endl;
+    }
+}
+
+void showCupsSold() {
+    cout << "Sales Report:\n";
+    cout << smallCoffee << " small cups sold ($" << smallCoffee * SMALL_COST << ")\n";
+    cout << mediumCoffee << " medium cups sold ($" << mediumCoffee * MEDIUM_COST << ")\n";
+    cout << largeCoffee << " large cups sold ($" << largeCoffee * LARGE_COST << ")\n";
+}
+
+void showTotalCoffeeSold() {
+    cout << "Total coffee sold: " << smallCoffee + mediumCoffee + largeCoffee << " cups." << endl;
+}
+
+void showTotalMoneyMade() {
+    double totalSales = (smallCoffee * SMALL_COST) + (mediumCoffee * MEDIUM_COST) + (largeCoffee * LARGE_COST);
+    double totalProfit = totalSales * PROFIT_COST;
+    cout << "Total money made: $" << totalSales << endl;
+    cout << "Total profit: $" << totalProfit << endl;
+}
+
+double totalCost(double totalSales) {
+    return totalSales * PROFIT_COST;
+}
+
+int main() {
+    int choice;
+    bool running = true;
+
+    printHeader();
+
+    while (running) {
+        printMenu();
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                buyCoffee();
+                break;
+            case 2:
+                showCupsSold();
+                break;
+            case 3:
+                showTotalCoffeeSold();
+                break;
+            case 4:
+                showTotalMoneyMade();
+                break;
+            case 5:
+                running = false;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }
+
+    return 0;
+}
