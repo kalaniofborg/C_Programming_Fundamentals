@@ -1,0 +1,34 @@
+// Name: Kalani Codes <3
+// Date: March 20th, 2025
+// Purpose: Module 4 - Lab - Call By Reference 
+
+#include <iostream>
+using namespace std;
+
+void swapNumber(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void addXtoY(int &x, int &y) {
+    x += y;
+}
+
+int main() {
+    int num1, num2, x, y;
+
+    cout << "Enter two integers to swap : ";
+    cin >> num1 >> num2;
+    cout << "Before swapping : " << num1 << " num2 = " << num2 << endl;
+    swapNumber(num1, num2);
+    cout << "After swapping : " << num1 << " num2 = " << num2 << endl;
+
+    cout << "Enter value for X and Y: ";
+    cin >> x >> y;
+    cout << "Before adding X to Y: x = " << x << ", y = " << y << endl;
+    addXtoY(x, y);
+    cout << "After adding X to Y: x = " << x << ", y = " << y << endl;
+
+    return 0;
+}
