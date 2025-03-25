@@ -1,0 +1,28 @@
+// Kalani Codes<3
+// 3.25.25
+// One-Dimensional Arrays
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double inputPrice(int[]);
+const int ARRAY_SIZE = 5; //global variable for Array Size
+
+int main() {
+    // Declare variables
+    int inputPrice[ARRAY_SIZE];
+
+    //use a for loop to ask for the 5 grades
+    for(int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cout << "Type to store prices "<< (i + 1) << ": ";
+        cin >> inputPrice[i];
+    }
+    
+    for (int i = 0; i < 5; i++) {
+        cout << "The cost for ATVs  " << i << " is: " << inputPrice[i] << endl;
+    }
+
+    return 0;
+}
