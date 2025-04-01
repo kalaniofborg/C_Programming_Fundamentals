@@ -1,0 +1,20 @@
+// Call by Reference example 
+
+#include <iostream>
+using namespace std;
+
+void creedInv(int& numberOfCreedRemaining);    //Prototype 
+
+int main()
+{
+  int creedGames = 10;
+cout << "Number of Creed games available: " << creedGames << endl;
+creedInv(creedGames);
+cout << "Number of Creed games remaining: " << creedGames << endl;
+return 0;
+}
+
+void creedInv(int& numberOfCreedRemaining)
+{
+  numberOfCreedRemaining = numberofCreedRemaining - 1;     // Body of Function Under Main
+}
