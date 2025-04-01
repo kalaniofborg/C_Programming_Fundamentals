@@ -1,0 +1,23 @@
+//  Kalani's Enum Example 3.30.2
+
+#include <iostream>
+using namespace std;
+
+enum Day {
+    MONDAY,       
+    TUESDAY,     
+    WEDNESDAY,       
+    THURSDAY,    
+    FRIDAY,    
+};
+
+int main() {
+    Day weekDay;
+
+
+    weekDay = MONDAY;
+
+    cout << "The day of the week is: " << weekDay << endl;
+
+    return 0;
+}
