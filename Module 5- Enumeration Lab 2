@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+
+enum DaysOfWeek {
+    Monday,       
+    Tuesday,     
+    Wednesday,       
+    Thursday,    
+    Friday,   
+    Saturday,
+    Sunday,
+};
+
+enum MonthsOfYear {
+    January,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
+};
+
+
+int main() {
+    int dayNumber;
+    int monthNumber;
+
+
+      cout << "Enter a number between 1 and 7 to get the day of the week: ";
+        cin >> dayNumber;
+
+        if (dayNumber >= 1 && dayNumber <= 7) {
+            DaysOfWeek day = static_cast<DaysOfWeek>(dayNumber);
+            switch (day) {
+                case Monday: cout << "Day: Monday" << endl; break;
+                case Tuesday: cout << "Day: Tuesday" << endl; break;
+                case Wednesday: cout << "Day: Wednesday" << endl; break;
+                case Thursday: cout << "Day: Thursday" << endl; break;
+                case Friday: cout << "Day: Friday" << endl; break;
+                case Saturday: cout << "Day: Saturday" << endl; break;
+                case Sunday: cout << "Day: Sunday" << endl; break;
+            }
+        } else {
+            cout << "Invalid Entry, Try Again" << endl;
+        }
+
+        cout << "Enter a number between 1 and 12 to get the month: ";
+        cin >> monthNumber;
+
+        if (monthNumber >= 1 && monthNumber <= 12) {
+            MonthsOfYear month = static_cast<MonthsOfYear>(monthNumber);
+            switch (month) {
+                case January: cout << "Month: January" << endl; break;
+                case February: cout << "Month: February" << endl; break;
+                case March: cout << "Month: March" << endl; break;
+                case April: cout << "Month: April" << endl; break;
+                case May: cout << "Month: May" << endl; break;
+                case June: cout << "Month: June" << endl; break;
+                case July: cout << "Month: July" << endl; break;
+                case August: cout << "Month: August" << endl; break;
+                case September: cout << "Month: September" << endl; break;
+                case October: cout << "Month: October" << endl; break;
+                case November: cout << "Month: November" << endl; break;
+                case December: cout << "Month: December" << endl; break;
+            }
+        } else {
+            cout << "Invalid Entry, Try Again" << endl;
+        }
+
+        return 0;
+    }
