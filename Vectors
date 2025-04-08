@@ -1,0 +1,24 @@
+
+#include <vector>
+#include <iostream>
+using namespace std; 
+
+int main() {
+    vector<int> myVector;
+
+    // Adding elements
+    myVector.push_back(1);
+    myVector.push_back(2);
+    myVector.push_back(3);
+
+    // Accessing elements
+    cout << "First element: " << myVector[0] << endl;
+  myVector.at(0)=5;
+    // Iterating through elements
+    for(int num : myVector) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
