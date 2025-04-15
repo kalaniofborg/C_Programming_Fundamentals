@@ -1,0 +1,31 @@
+// Kalani
+// April 15th, 2025
+// Practice with Structures 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+ struct DreamCar {
+    string make;
+    string model;
+    double price;
+    int year;
+};
+
+int main() {
+
+ DreamCar myCar;
+  myCar.make = "Audi";
+  myCar.model = "A6 Quattro";
+  myCar.price = 7000;
+  myCar.year = 1999;
+
+  cout << "Model: " << myCar.model << endl;
+  cout << "Make: " << myCar.make << endl;
+  cout << "Price: " << myCar.price << endl;
+  cout << "Year: " << myCar.year << endl;
+
+  return 0;
+}
+
