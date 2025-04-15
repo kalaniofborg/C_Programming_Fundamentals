@@ -1,0 +1,32 @@
+// Kalani
+// April 15th, 2025
+// Practice structures with food data
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+struct Food {
+  string name;
+  double price;
+  int quantity;
+};
+
+
+int main(){
+
+Food MyFood;
+  MyFood.name = "Birria";
+  MyFood.price = 12.99;
+  MyFood.quantity = 3;
+
+Food YourFood = { "Birria", 12.99, 3};
+
+
+cout << "Name: " << MyFood.name << endl;
+cout << "Price: " << MyFood.price << endl;
+cout << "Quantity" << MyFood.quantity << endl;
+
+return 0;
+}
