@@ -1,0 +1,29 @@
+// Demo of a C++ structure "Person"
+
+#include <iostream>
+#include <string>
+using namespace std; 
+
+// Define a structure named 'Person'
+struct Person {
+    string name;
+    int age;
+    float height;
+};
+
+int main() {
+    // Create an instance of the 'Person' structure
+    Person personOne;
+
+    // Assign values to the structure members
+    personOne.name = "Kevin Roark";
+    personOne.age = 30;
+    personOne.height = 5.7f;
+
+    // Access and print structure members
+    cout << "Name: " << personOne.name << endl;
+    cout << "Age: " << personOne.age << endl;
+    cout << "Height: " << personOne.height << endl;
+
+    return 0;
+}
