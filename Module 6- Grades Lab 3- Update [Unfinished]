@@ -1,0 +1,69 @@
+// Kalani
+//April 16th, 2025
+//
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int SIZE = 5;
+
+void getGrades(double grades[]);
+void displayGrades(const double grages[]);
+double averageGrades(const double grades[]);
+
+int main() {
+    int choice;
+    double grades[SIZE];
+
+    do {
+        cout << "Menu: \n";
+        cout << "Option 1 \n";
+        cout << "Option 2 \n";
+        cout << "Option 3 \n";
+        cout << "Option 4 \n";
+        cout << "Option 5 \n";
+        cout << "Option 6 \n";
+        cout << "Option 7- Manage Quiz Grades: \n";
+        cout << "0. Exit \n ";
+        cout << "Enter Your Choice: \n";
+        cin >> choice;
+
+        switch (choice) {
+            case 7:
+                getGrades(grades);
+                displayGrades(grades);
+                cout << "Average Grade: "  << averageGrades(grades) << endl;
+                break;
+            case 0:
+                cout << "Exiting the program. \n";
+                break;
+            default:
+                cout << "Invalid choice. Select again. \n";
+        }
+    }
+        while (choice != 0);
+    return 0;
+}
+
+void getGrades(double grades[]) {
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Enter grades " << (i + 1) << ": ";
+        cin >> grades[i];
+    }
+}
+
+void displayGrades(const double grades[]){
+    cout << "Grades Entered: \n";
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Grade Number: " << (i + 1) << ": " << grades[i] << endl;
+    }
+}
+
+double averageGrades(const double grades[]) {
+    double sum = 0;
+        for (int i = 0; i < SIZE; ++i) {
+        sum += grades[i];
+        }
+    return sum / SIZE;
+}
