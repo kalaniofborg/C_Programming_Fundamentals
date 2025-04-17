@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+const int SIZE = 5;
+
+// Function prototypes
+void getGrades(double grades[]);
+void displayGrades(const double grades[]);
+double averageGrades(const double grades[]);
+
+int main() {
+    int choice;
+    double grades[SIZE];
+
+    do {
+        cout << "\nMenu:\n";
+        cout << "1. Option 1\n";
+        cout << "2. Option 2\n";
+        cout << "3. Option 3\n";
+        cout << "4. Option 4\n";
+        cout << "5. Option 5\n";
+        cout << "6. Option 6\n";
+        cout << "7. Manage Quiz Grades\n";
+        cout << "0. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 7:
+                getGrades(grades);
+                displayGrades(grades);
+                cout << "Average Grade: " << averageGrades(grades) << endl;
+                break;
+            case 0:
+                cout << "Exiting the program.\n";
+                break;
+            default:
+                cout << "Invalid choice. Try again.\n";
+        }
+    } while (choice != 0);
+
+    return 0;
+}
+
+// Function to get grades from user
+void getGrades(double grades[]) {
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Enter grade #" << (i + 1) << ": ";
+        cin >> grades[i];
+    }
+}
+
+// Function to display the grades
+void displayGrades(const double grades[]) {
+    cout << "Grades Entered:\n";
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Grade #" << (i + 1) << ": " << grades[i] << endl;
+    }
+}
+
+// Function to calculate average grade
+double averageGrades(const double grades[]) {
+    double sum = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        sum += grades[i];
+    }
+    return sum / SIZE;
+}
