@@ -1,0 +1,86 @@
+// Kalani 
+// April 18th, 2025
+// Program to create calculations for grades 
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+const int SIZE = 5;
+
+void getGrades(double grades[]);
+void displayGrades(const double grades[]);
+double averageGrades(const double grades[]);
+void totalGrades(double grades[]);
+
+int main() {
+    string name;
+    
+    cout << "Enter your name: " << endl;
+    getline(cin, name);
+    
+    int choice;
+    double grades[SIZE];
+
+    do {
+        cout << "\nMenu:\n";
+        cout << "6. Add All Grades Together\n";
+        cout << "7. Calculate Quiz Grade Average \n";
+        cout << "0. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 6:
+            getGrades(grades);
+            displayGrades(grades);
+            totalGrades(grades);
+            break;
+            
+            case 7:
+                getGrades(grades);
+                displayGrades(grades);
+                cout << "Average Grade: " << averageGrades(grades) << endl;
+                break;
+            case 0:
+                cout << "Exiting the program.\n";
+                break;
+            default:
+                cout << "Invalid choice. Try again.\n";
+        }
+    } while (choice != 0);
+
+    return 0;
+}
+
+void getGrades(double grades[]) {
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Enter grade #" << (i + 1) << ": ";
+        cin >> grades[i];
+    }
+}
+
+void displayGrades(const double grades[]) {
+    cout << "Grades Entered:\n";
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Grade #" << (i + 1) << ": " << grades[i] << endl;
+    }
+}
+
+double averageGrades(const double grades[]) {
+    double sum = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        sum += grades[i];
+    }
+    return sum / SIZE;
+}
+
+void totalGrades(double grades[]) {
+    double total = 0.0;
+    for (int i = 0; i < 5; ++i) {
+        total += grades[i];
+        cout << "The total of all grades: " << total << endl;
+    
+    }
+}
