@@ -1,0 +1,80 @@
+// Kalani
+// April 18th, 2025
+// Module 6 Lab- Vectors- Create a program to prompt a user to input a list of integers, display the contents of the vector, and insert values into the vector 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> numbers;
+    int input;
+
+    // while loop to get user input
+    cout << "Enter a list of integers one at a time. Enter -1 to stop. :\n";
+    while (true) {
+        cout << "Enter an integer: ";
+        cin >> input;
+
+        if (input == -1) break;
+        numbers.push_back(input);
+    }
+
+    // iterate through the vector and display the contents
+    cout << "\nThe contents of the vector are: ";
+    for (int num : numbers) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    // search
+    cout << "\nEnter a value to search for: ";
+    cin >> input;
+    bool found = false;
+    for (size_t i = 0; i < numbers.size(); ++i) {
+        if (numbers[i] == input) {
+            cout << "Value " << input << " was found at position " << i << ".\n";
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        cout << "Value " << input << " was not found in the vector.\n";
+    }
+
+    
+    int position;
+    cout << "\nEnter a position to remove from the vector: ";
+    cin >> position;
+// erase function 
+    if (position >= 0 && position < numbers.size()) {
+        numbers.erase(numbers.begin() + position);
+        cout << "Updated contents of vector after removal: ";
+        for (int num : numbers) {
+            cout << num << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Invalid position.\n";
+    }
+
+    // insert function to insert a value at a specific position
+    int valueToInsert;
+    cout << "\nEnter a value to insert: ";
+    cin >> valueToInsert;
+    cout << "Enter the position to insert it at: ";
+    cin >> position;
+
+    if (position >= 0 && position <= numbers.size()) {
+        numbers.insert(numbers.begin() + position, valueToInsert);
+        cout << "Updated vector after insertion: ";
+        for (int num : numbers) {
+            cout << num << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Invalid position.\n";
+    }
+
+    return 0;
+}
