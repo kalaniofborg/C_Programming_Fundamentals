@@ -33,11 +33,14 @@ int HighestAge(int ages[], int size) {
     }
     return highest;
 }
+
+void PrintAges(int ages[], int size);
+
 int main() {
   const int SIZE = 5;
     int ages[SIZE];
 
-    
+
 cout << "Welcome to the Age Stats Calculator! \n" << endl;
 cout << "Enter 5 ages: \n ";
 for(int i = 0; i < SIZE; i++) {
