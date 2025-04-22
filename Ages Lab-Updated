@@ -1,0 +1,71 @@
+// Kalani
+// April 15th, 2025
+// program to add ages, highest, lowest and average
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+double AverageAge(int ages[], int size);
+int LowestAge(int ages[], int size);
+void PrintAges(int ages[], int size);
+int HighestAge(int ages[], int size);
+
+
+int main() {
+  const int SIZE = 5;
+    int ages[SIZE];
+   
+   
+
+cout << "Welcome to the Age Stats Calculator! \n" << endl;
+cout << "Enter 5 ages: \n ";
+for(int i = 0; i < SIZE; i++) {
+    cout << "Age: " << i + 1 << ": ";
+    cin >> ages[i];
+}
+
+cout << "Ages: ";
+    for (int i = 0; i < SIZE; i++){
+        cout << ages[i];
+        if(i < SIZE - 1) cout << ": "; 
+    cout << endl;
+        }
+
+    double average = AverageAge(ages, SIZE);
+    int lowest = LowestAge(ages, SIZE);
+    int highest = HighestAge(ages, SIZE);
+
+    cout << "Average Age: " << average << endl;
+    cout << "Lowest Age: " << lowest << endl;
+    cout << "Highest Age: " << highest << endl;
+
+
+ return 0;
+}
+
+double AverageAge(int ages[], int size) {
+    int sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += ages[i];
+    }
+        return static_cast<double>(sum) / size;
+}
+int LowestAge(int ages[], int size) {
+    int lowest = ages[0];
+    for(int i = 1; i < size; i++) {
+        if(ages[i] < lowest) {
+            lowest = ages[i];
+        }
+    }
+    return lowest;
+}
+int HighestAge(int ages[], int size) {
+    int highest = ages [0];
+    for(int i = 1; i < size; i++) {
+        if(ages[i] > highest) {
+            highest = ages[i];
+        }
+    }
+    return highest;
+}
