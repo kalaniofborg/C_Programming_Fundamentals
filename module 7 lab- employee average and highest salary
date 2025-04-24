@@ -1,0 +1,82 @@
+// Kalani
+// April 24th, 2025
+// module 7, Lab- Input employee info and find average and highest salary
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Employee
+{
+    string name;
+    int employeeId;
+    int age;
+    string gender;
+    float salary; 
+};
+void getEmployeeDetails(Employee &employeeInfo);
+void displayEmployeeDetails(Employee employeeInfo);
+void findHighestSalary(Employee employeeInfoArray[], int size);
+void findAverageSalary(Employee employeeInfoArray[], int size);
+int main(){
+    Employee employeeInfo;
+    Employee employeeInfoArray[3];
+
+    for(int i = 0; i < 3; i++)
+        {
+             // prompt the user to enter details of 3 employees and store them in the array
+     cout << "Enter employee name: " << endl;
+    getline(cin, employeeInfo.name);
+    cout << endl;
+    cout << "Enter employee ID: " << endl;
+    cin >> employeeInfo.employeeId;
+    cout << endl;
+    cout << "Enter employee age: " << endl;
+    cin >> employeeInfo.age;
+    cout << endl;
+    cin.ignore();
+    cout << "Enter employee gender: " << endl;
+    getline(cin, employeeInfo.gender);
+    cout << endl;
+    cout << "Enter employee salary: " << endl;
+    cin >> employeeInfo.salary;
+    cout << endl;
+    cin.ignore();
+    employeeInfoArray[i] = employeeInfo;
+    }
+    for(int i = 0; i < 3; i++)    displayEmployeeDetails(employeeInfoArray[i]);
+
+    findHighestSalary(employeeInfoArray, 3);
+    findAverageSalary(employeeInfoArray, 3);
+    return 0;
+}
+void displayEmployeeDetails(Employee employeeInfo){
+// output structure data 
+cout << "Employee name: " << employeeInfo.name << endl;
+cout << "Employee ID: " << employeeInfo.employeeId << endl;
+cout << "Employee age: " << employeeInfo.age << endl;
+cout << "Employee gender: " << employeeInfo.gender << endl;
+cout << "Employee salary: " << employeeInfo.salary << endl;
+}
+void getStudentDetails(Employee &employeeInfo) {
+    for(int i = 0; i < 3; i++) {
+        cout << "Enter employee name: " << endl;
+        getline(cin, employeeInfo.name);
+    }
+}
+void findHighestSalary(Employee employeeInfoArray[], int size) {
+    float highestSalary = 0;
+    for(int i = 0; i < size; i++) {
+        if(employeeInfoArray[i].salary > highestSalary) {
+            highestSalary = employeeInfoArray[i].salary;
+        }
+    }
+    cout << "Highest salary: " << highestSalary << endl;
+}
+void findAverageSalary(Employee employeeInfoArray[], int size) {
+    float totalSalary = 0;
+    for(int i = 0; i < size; i++) {
+        totalSalary += employeeInfoArray[i].salary;
+    }
+    cout << "Average Salary: " << totalSalary / size << endl;
+}
