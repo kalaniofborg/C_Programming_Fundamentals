@@ -1,0 +1,62 @@
+// Kalani 
+// May, 4th 2025
+// Create a program that displays the inventory of a car lot 
+
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+
+struct Car {
+    string make;
+    string model;
+    int year;
+    double price;
+};
+
+void displayInventory(const Car cars[], int size);
+double calculateTotalValue(const Car cars[], int size);
+
+int main() {
+    Car carLot[5] = {
+        {"Honda", "Pilot", 2016, 30000.99},
+        {"Honda", "Accord", 2021, 24999.99},
+        {"Toyota", "Tacoma", 2007, 7000.99},
+        {"Audi", "a6 Quattro", 1999, 7500.09},
+        {"Chevy", "Malibu", 2023, 35999.99}
+    };
+
+    cout << "\n+*+*+* Car Lot Inventory *+*+*+\n\n";
+    displayInventory(carLot, 5);
+
+    // ===== Display Total Value =====
+    double totalValue = calculateTotalValue(carLot, 5);
+    cout << "\nTotal Inventory Value: $" 
+         << fixed << setprecision(2) << totalValue << endl;
+
+    return 0;
+}
+
+void displayInventory(const Car cars[], int size) {
+    cout << left << setw(12) << "Make"
+         << setw(12) << "Model"
+         << setw(8)  << "Year"
+         << setw(10) << "Price" << endl;
+
+    cout << string(42, '-') << endl;
+
+    for (int i = 0; i < size; ++i) {
+        cout << left << setw(12) << cars[i].make
+             << setw(12) << cars[i].model
+             << setw(8)  << cars[i].year
+             << "$" << fixed << setprecision(2) << setw(9) << cars[i].price << endl;
+    }
+}
+
+double calculateTotalValue(const Car cars[], int size) {
+    double total = 0.0;
+    for (int i = 0; i < size; ++i) {
+        total += cars[i].price;
+    }
+    return total;
+}
